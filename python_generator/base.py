@@ -292,6 +292,13 @@ class RETURN(STATEMENT):
 
 
 class YIELD(STATEMENT):
+    class FROM(STATEMENT):
+        def __init__(self, expr: EXPRESSION_I):
+            self.expr: EXPRESSION_O = EXPRESSION.parse(expr)
+
+        def __str__(self):
+            return f"yield from {self.expr!s}"
+
     def __init__(self, expr: Union[EXPRESSION, ARGS]):
         self.expr: Union[EXPRESSION, ARGS] = expr
 
