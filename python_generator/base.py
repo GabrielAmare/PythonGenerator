@@ -888,6 +888,10 @@ class IMPORT(STATEMENT):
         def __str__(self):
             return f"from {self.name!s} import *"
 
+    @classmethod
+    def TYPE(cls, t: type) -> IMPORT.FROM:
+        return IMPORT.FROM(t.__module__, t.__name__)
+
     class FROM(STATEMENT):
         def __init__(self, name: VAR_I, args: IMPORT_FROM_ARGS_I = None):
             self.name: VAR_O = VAR.parse(name)
