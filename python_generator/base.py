@@ -693,7 +693,7 @@ class INT(OBJECT):
 
 
 class STR(OBJECT):
-    def __init__(self, content: str):
+    def __init__(self, content: str = ""):
         self.content: str = content
 
     def __str__(self):
@@ -701,7 +701,7 @@ class STR(OBJECT):
 
 
 class FSTR(OBJECT):
-    def __init__(self, content: str):
+    def __init__(self, content: str = ""):
         self.content: str = content
 
     def __str__(self):
