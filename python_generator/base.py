@@ -21,7 +21,7 @@ __all__ = [
     "ARGS", "ARG",
     "IMPORT", "MODULE", "PACKAGE", "METHODS",
     "ISINSTANCE", "ISSUBCLASS", "EXCEPTION",
-    "SWITCH", "ITER_OVER",
+    "SWITCH", "ITER_OVER", "LAMBDA"
 ]
 
 NONE = "None"
