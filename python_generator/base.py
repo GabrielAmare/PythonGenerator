@@ -319,6 +319,9 @@ class SCOPE:
             assert isinstance(statement, STATEMENT), type(statement)
             self.statements.append(statement)
 
+    def __iter__(self):
+        yield from self.statements
+
     def __str__(self):
         r = ""
         prefix = ""
