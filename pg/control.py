@@ -18,7 +18,10 @@ class If(Statement):
 
     def tokens(self) -> list[str]:
         tokens = [
-            Keywords.IF, Symbols.SPACE, *self.condition.tokens(), Symbols.COLON,
+            Keywords.IF,
+            Symbols.SPACE,
+            *self.condition.tokens(),
+            Symbols.COLON,
             *self.block.tokens()
         ]
 
@@ -36,7 +39,11 @@ class Elif(PythonCode):
 
     def tokens(self) -> list[str]:
         tokens = [
-            Keywords.ELIF, Symbols.SPACE, *self.condition.tokens(), Symbols.COLON,
+            Symbols.NEWLINE,
+            Keywords.ELIF,
+            Symbols.SPACE,
+            *self.condition.tokens(),
+            Symbols.COLON,
             *self.block.tokens()
         ]
 
@@ -52,6 +59,7 @@ class Else(PythonCode):
 
     def tokens(self) -> list[str]:
         return [
+            Symbols.NEWLINE,
             Keywords.ELSE,
             Symbols.COLON,
             *self.block.tokens()
