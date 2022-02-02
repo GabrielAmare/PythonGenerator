@@ -29,6 +29,9 @@ class Scope(PythonCode):
 class Block(PythonCode):
     statements: list[Statement]
 
+    def __post_init__(self):
+        assert len(self.statements) > 0, "cannot define a block without statements !"
+
     def tokens(self) -> list[str]:
         tokens = []
 
