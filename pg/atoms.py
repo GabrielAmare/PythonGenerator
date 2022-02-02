@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from .base import PythonCode
+from .base import Expression
 
 __all__ = [
     'Variable',
@@ -12,7 +12,7 @@ __all__ = [
 
 
 @dataclass
-class Variable(PythonCode):
+class Variable(Expression):
     name: str
 
     def __post_init__(self):
@@ -23,7 +23,7 @@ class Variable(PythonCode):
 
 
 @dataclass
-class Int(PythonCode):
+class Int(Expression):
     value: int
 
     def tokens(self) -> list[str]:
@@ -31,7 +31,7 @@ class Int(PythonCode):
 
 
 @dataclass
-class Float(PythonCode):
+class Float(Expression):
     value: float
 
     def tokens(self) -> list[str]:
@@ -39,7 +39,7 @@ class Float(PythonCode):
 
 
 @dataclass
-class Bool(PythonCode):
+class Bool(Expression):
     value: bool
 
     def tokens(self) -> list[str]:
@@ -47,7 +47,7 @@ class Bool(PythonCode):
 
 
 @dataclass
-class Str(PythonCode):
+class Str(Expression):
     value: str
 
     def tokens(self) -> list[str]:
