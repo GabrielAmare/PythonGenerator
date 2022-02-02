@@ -1,10 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional, Union
 
-from .base import PythonCode, Statement, Expression
-from .constants import Keywords, Symbols
+from .base import PythonCode, Statement
+from .constants import Symbols
 
 __all__ = ['Scope', 'Block']
 
