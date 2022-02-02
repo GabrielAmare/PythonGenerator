@@ -11,7 +11,7 @@ __all__ = ['Scope', 'Block']
 
 @dataclass
 class Scope(PythonCode):
-    statements: tuple[Statement]
+    statements: list[Statement]
 
     def tokens(self) -> list[str]:
         tokens = []
@@ -27,7 +27,7 @@ class Scope(PythonCode):
 
 @dataclass
 class Block(PythonCode):
-    statements: tuple[Statement]
+    statements: list[Statement]
 
     def tokens(self) -> list[str]:
         tokens = []
