@@ -18,6 +18,18 @@ class Keywords:
     RETURN = "return"
     YIELD = "yield"
     RAISE = "raise"
+    PASS = "pass"
+    OR = "or"
+    AND = "and"
+    NOT = "not"
+    IMPORT = "import"
+    AS = "as"
+    FROM = "from"
+    WITH = "with"
+    
+    NONE = "None"
+    TRUE = "True"
+    FALSE = "False"
 
 
 class Symbols:
