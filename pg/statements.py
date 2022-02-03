@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import Optional
 
 from .base import Statement, Expression
@@ -26,6 +27,7 @@ CONTINUE = _Continue()
 BREAK = _Break()
 
 
+@dataclass
 class Return(Statement):
     expression: Optional[Expression] = None
 
@@ -41,6 +43,7 @@ class Return(Statement):
         return tokens
 
 
+@dataclass
 class Yield(Statement):
     expression: Optional[Expression] = None
 
@@ -56,6 +59,7 @@ class Yield(Statement):
         return tokens
 
 
+@dataclass
 class Raise(Statement):
     expression: Optional[Expression] = None
 
