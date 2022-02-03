@@ -59,3 +59,8 @@ class Symbols:
     STAR_STAR = "**"
     SLASH_SLASH = "//"
     SLASH_SLASH_EQUAL = "//="
+    EXC_EQUAL = "!="
+    LV_EQUAL = "<="
+    LV = "<"
+    RV_EQUAL = ">="
+    RV = ">"
