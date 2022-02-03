@@ -1,10 +1,26 @@
 from dataclasses import dataclass
 from typing import Optional
 
+from .atoms import Variable
 from .base import Statement, Expression
 from .constants import Keywords, Symbols
 
-__all__ = ['PASS', 'CONTINUE', 'BREAK', 'Return', 'Yield', 'Raise']
+__all__ = [
+    'PASS',
+    'CONTINUE',
+    'BREAK',
+    'Return',
+    'Yield',
+    'Raise',
+    'Assign',
+    'IAdd',
+    'ISub',
+    'IMul',
+    'ITruediv',
+    'IFloordiv',
+    'IMod',
+    'IPow'
+]
 
 
 class _Pass(Statement):
@@ -73,3 +89,123 @@ class Raise(Statement):
             ])
 
         return tokens
+
+
+@dataclass
+class Assign(Statement):
+    var: Variable
+    value: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.var.tokens(),
+            Symbols.SPACE,
+            Symbols.EQUAL,
+            Symbols.SPACE,
+            *self.value.tokens()
+        ]
+
+
+@dataclass
+class IAdd(Statement):
+    var: Variable
+    value: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.var.tokens(),
+            Symbols.SPACE,
+            Symbols.PLUS_EQUAL,
+            Symbols.SPACE,
+            *self.value.tokens()
+        ]
+
+
+@dataclass
+class ISub(Statement):
+    var: Variable
+    value: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.var.tokens(),
+            Symbols.SPACE,
+            Symbols.MINUS_EQUAL,
+            Symbols.SPACE,
+            *self.value.tokens()
+        ]
+
+
+@dataclass
+class IMul(Statement):
+    var: Variable
+    value: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.var.tokens(),
+            Symbols.SPACE,
+            Symbols.STAR_EQUAL,
+            Symbols.SPACE,
+            *self.value.tokens()
+        ]
+
+
+@dataclass
+class ITruediv(Statement):
+    var: Variable
+    value: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.var.tokens(),
+            Symbols.SPACE,
+            Symbols.SLASH_EQUAL,
+            Symbols.SPACE,
+            *self.value.tokens()
+        ]
+
+
+@dataclass
+class IFloordiv(Statement):
+    var: Variable
+    value: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.var.tokens(),
+            Symbols.SPACE,
+            Symbols.SLASH_SLASH_EQUAL,
+            Symbols.SPACE,
+            *self.value.tokens()
+        ]
+
+
+@dataclass
+class IMod(Statement):
+    var: Variable
+    value: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.var.tokens(),
+            Symbols.SPACE,
+            Symbols.PERCENT_EQUAL,
+            Symbols.SPACE,
+            *self.value.tokens()
+        ]
+
+
+@dataclass
+class IPow(Statement):
+    var: Variable
+    value: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.var.tokens(),
+            Symbols.SPACE,
+            Symbols.STAR_STAR_EQUAL,
+            Symbols.SPACE,
+            *self.value.tokens()
+        ]
