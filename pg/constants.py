@@ -57,6 +57,7 @@ class Symbols:
     EQUAL_EQUAL = "=="
     PERCENT_EQUAL = "%="
     STAR_STAR = "**"
+    STAR_STAR_EQUAL = "**="
     SLASH_SLASH = "//"
     SLASH_SLASH_EQUAL = "//="
     EXC_EQUAL = "!="
