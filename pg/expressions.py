@@ -197,3 +197,18 @@ class Mod(Expression):
             Symbols.SPACE,
             *self.right.tokens()
         ]
+
+
+@dataclass
+class Pow(Expression):
+    left: Expression
+    right: Expression
+
+    def tokens(self) -> list[str]:
+        return [
+            *self.left.tokens(),
+            Symbols.SPACE,
+            Symbols.STAR_STAR,
+            Symbols.SPACE,
+            *self.right.tokens()
+        ]
