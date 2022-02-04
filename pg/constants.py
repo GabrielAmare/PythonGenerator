@@ -26,7 +26,7 @@ class Keywords:
     AS = "as"
     FROM = "from"
     WITH = "with"
-
+    
     NONE = "None"
     TRUE = "True"
     FALSE = "False"
