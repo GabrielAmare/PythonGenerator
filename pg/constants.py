@@ -65,3 +65,4 @@ class Symbols:
     LV = "<"
     RV_EQUAL = ">="
     RV = ">"
+    AT = "@"
